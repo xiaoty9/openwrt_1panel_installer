@@ -14,12 +14,12 @@
 WRT固件版本繁多，官方原版[openwrt](https://openwrt.org)及[Imortalwrt](https://downloads.immortalwrt.org/)版本或其他支持在线升级安装软件包的固件，请先安装docker，docker-compose；不具备docker且不支持在线安装docker的固件，在未更换固件的情况夏，可直接放弃安装尝试；
 ### 2024-6-5 安装版本选择说明
 
-1.wrt1panel仓库最新版：为基于1panel 1.10.1-lts源码修改版本；
+1.wrt1panel仓库最新版：为基于1panel 最新源码修改版本（无xpack 专业版相关功能）；
 2.1panel最新版：为官方1panel 发布的最新版本；
 
 ## 执行如下命令一键安装 1Panel:
 ```sh
-curl -sSL https://raw.githubusercontent.com/gcsong023/wrt_installer/wrt_1panel/quick_start.sh -o quick_start.sh && bash quick_start.sh
+curl -sSL https://raw.githubusercontent.com/gcsong023/wrt_installer/1panel/quick_start.sh -o quick_start.sh && bash quick_start.sh
 ```
 ### x86_amd64平台openwrt可尝试使用以下命令安装基于官方V1.10.1-lts源码的修改版本(一键安装脚本已支持自动安装选定）：
 

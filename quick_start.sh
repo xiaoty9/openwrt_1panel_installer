@@ -2,7 +2,7 @@
 #Install Latest Stable 1Panel Release
 #新增安装版本选择：官方版本和wrt1panel仓库版本，检测opkg命令是否存在以判断；
 
-WRT_URL="https://github.com/gcsong023/wrt1panel/releases"
+WRT_URL="https://github.com/gcsong023/1Panel/releases"
 BASE_URL="https://resource.fit2cloud.com/1panel/package"
 
 # 使用 uname -m 来直接获取系统架构
@@ -34,7 +34,7 @@ function check_version() {
         echo "尝试获取最新版本（第${attempt}次）..."
         case $DEFAULT_BRANCH in
             1)
-                VERSION=$(curl -s https://api.github.com/repos/gcsong023/wrt1panel/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+                VERSION=$(curl -s https://api.github.com/repos/gcsong023/1Panel/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
                 ;;
             2)
                 VERSION=$(curl -s "${BASE_URL}/${INSTALL_MODE}/latest")
@@ -158,8 +158,8 @@ function install_panel() {
     tar zxvf "$package_file_name"
     cd "1panel-${VERSION}-linux-${architecture}"
     if [ "$BRANCH" == "2" ]; then
-        download_file https://raw.githubusercontent.com/gcsong023/wrt_installer/wrt_1panel/install.sh install.sh
-        download_file https://raw.githubusercontent.com/gcsong023/wrt_installer/wrt_1panel/1pctl 1pctl
+        download_file https://raw.githubusercontent.com/gcsong023/wrt_installer/1panel/install.sh install.sh
+        download_file https://raw.githubusercontent.com/gcsong023/wrt_installer/1panel/1pctl 1pctl
         sedsed -i "s/ORIGINAL_VERSION=v1.0.0/ORIGINAL_VERSION=${VERSION}/g" 1pctl
     fi
     chmod +x install.sh && chmod +x 1panel && chmod +x 1pctl

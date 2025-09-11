@@ -29,6 +29,11 @@ curl -sSL https://raw.githubusercontent.com/gcsong023/wrt_installer/wrt_1panel/q
 ```sh
 cp $pwd/1panel /usr/local/bin/1panel # 手动替换1panel二进制文件方式 $pwd 为压缩文件解压后目录。
 ```
+
+## 2025-9-11 说明
+
+经过一段时间的pr，官方新版V1.10.31lts 已经适配immortalwrt，可以直接使用。 本仓库如无其他情况将不再更新。
+
 ## 2024-6-5 更新说明
 
 1、更新quick_start.sh、install.sh，**支持根据环境设定默认选择安装包版本**；
@@ -39,7 +44,7 @@ cp $pwd/1panel /usr/local/bin/1panel # 手动替换1panel二进制文件方式 $
 2、修改install.sh脚本，**支持ImmortalWrt固件在线安装docker与docker-compose**，其他固件未测试；
 
 ### 可能存在的问题：
-*1、-ash: curl: not found  bash: not found 出现这类问题的原因是，所使用的openwrt版本，未安装curl  bash 命令 ；*
+*1、-ash: curl: not found  bash: not found 出现这类问题的更新原因是，所使用的openwrt版本，未安装curl  bash 命令 ；*
 
 #### 解决办法：
 运行opkg update ，更新包列表，然后 运行opkg install {package};
